@@ -4,6 +4,9 @@ extends Node2D
 var is_game_over = false
 var is_game_paused = false
 var score = 0
+var current_tetromino
+var drop_timer = 0
+var drop_interval = 1.0  # Tiempo en segundos para que el Tetromino caiga una fila
 
 # Función que se ejecuta al inicio
 func _ready():
@@ -15,6 +18,21 @@ func start_game():
 	is_game_paused = false
 	score = 0
 	# Aquí puedes añadir lógica para inicializar la cuadrícula, Tetrominos, etc.
+
+# Función que se ejecuta cada frame
+func _process(delta):
+	if is_game_paused or is_game_over:
+		return
+
+	drop_timer += delta
+	if drop_timer > drop_interval:
+		drop_timer = 0
+		move_tetromino(0, 1)
+
+# Mover el Tetromino y verificar colisiones con la cuadrícula
+func move_tetromino(delta_x, delta_y):
+	current_tetromino.move(delta_x, delta_y)
+	# Aquí puedes añadir lógica para verificar colisiones con la cuadrícula y ajustar la posición si es necesario
 
 # Pausar el juego
 func pause_game():

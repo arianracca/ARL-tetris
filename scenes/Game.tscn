@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxhaqjdsghpqb"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_nau7p"]
+[ext_resource type="Script" path="res://scripts/grid.gd" id="2_4212e"]
+[ext_resource type="Script" path="res://scripts/tetromino.gd" id="3_0fq52"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_nau7p")
+
+[node name="Grid" type="Node2D" parent="."]
+script = ExtResource("2_4212e")
+
+[node name="Tetromino" type="Node2D" parent="."]
+script = ExtResource("3_0fq52")
+
+[node name="Node2D" type="Node2D" parent="."]
