@@ -49,3 +49,10 @@ func check_and_clear_rows():
 			clear_row(y)
 			rows_cleared += 1
 	return rows_cleared
+
+# Dibuja la cuadrícula y los bloques
+func _draw():
+	for x in range(grid_width):
+		for y in range(grid_height):
+			if grid[x][y] != null:
+				draw_rect(Rect2(x * block_size, y * block_size, block_size, block_size), grid[x][y])
