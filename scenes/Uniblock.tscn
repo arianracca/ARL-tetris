@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmsmyetl26voo"]
+
+[ext_resource type="Texture2D" uid="uid://b13xcunxtan7p" path="res://assets/sprites/uniblock.png" id="1_x8gpt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcr58"]
+size = Vector2(32, 32)
+
+[node name="Uniblock" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x8gpt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qcr58")

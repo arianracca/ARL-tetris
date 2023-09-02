@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0rvfm3mma7hv"]
+
+[ext_resource type="PackedScene" uid="uid://dmsmyetl26voo" path="res://scenes/Uniblock.tscn" id="1_p3gkv"]
+
+[node name="TetriminoJ" type="Node2D"]
+
+[node name="Uniblock" parent="." instance=ExtResource("1_p3gkv")]
+position = Vector2(0, -16)
+
+[node name="Uniblock2" parent="." instance=ExtResource("1_p3gkv")]
+position = Vector2(0, 16)
+
+[node name="Uniblock3" parent="." instance=ExtResource("1_p3gkv")]
+position = Vector2(0, -48)
+
+[node name="Uniblock4" parent="." instance=ExtResource("1_p3gkv")]
+position = Vector2(-32, 16)
