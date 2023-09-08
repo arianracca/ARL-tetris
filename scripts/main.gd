@@ -4,6 +4,7 @@ extends Node2D
 var is_game_over = false
 var is_game_paused = false
 var score = 0
+var tetromino_scene = preload("res://scenes/Tetromino.tscn")
 var current_tetromino
 var drop_timer = 0
 var drop_interval = 1.0  # Tiempo en segundos para que el Tetromino caiga una fila
@@ -17,7 +18,8 @@ func start_game():
 	is_game_over = false
 	is_game_paused = false
 	score = 0
-	# Aquí puedes añadir lógica para inicializar la cuadrícula, Tetrominos, etc.
+	call_deferred("spawn_tetromino")
+
 
 # Función que se ejecuta cada frame
 func _process(delta):
@@ -52,3 +54,8 @@ func game_over():
 func update_score(points):
 	score += points
 	# Actualizar la interfaz de usuario con la nueva puntuación
+
+# Instanciar un nuevo Tetromino
+func spawn_tetromino():
+	current_tetromino = tetromino_scene.instantiate()
+	add_child(current_tetromino)

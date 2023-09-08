@@ -12,6 +12,7 @@ func _ready():
 
 # Inicializar la cuadrícula con valores vacíos
 func initialize_grid():
+	grid = []
 	for x in range(grid_width):
 		grid.append([])
 		for y in range(grid_height):
@@ -19,11 +20,24 @@ func initialize_grid():
 
 # Verificar si una posición en la cuadrícula está ocupada
 func is_cell_occupied(x, y):
-	return grid[x][y] != null
+	if is_cell_within_bounds(x, y):
+		return grid[x][y] != null
+	return true
+
+# Verificar si una posición en la cuadrícula está dentro de los límites
+func is_cell_within_bounds(x, y):
+	return x >= 0 and x < grid_width and y >= 0 and y < grid_height
 
 # Añadir un bloque a una posición específica en la cuadrícula
 func set_cell(x, y, value):
-	grid[x][y] = value
+	if is_cell_within_bounds(x, y):
+		grid[x][y] = value
+
+# Obtener el color de un bloque en una posición específica
+func get_cell_color(x, y):
+	if is_cell_within_bounds(x, y):
+		return grid[x][y]
+	return null
 
 # Verificar si una fila está completa
 func is_row_complete(y):
