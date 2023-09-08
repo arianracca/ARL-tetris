@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhnivtj8q305y"]
+
+[ext_resource type="Texture2D" uid="uid://cctaalnypylaf" path="res://assets/sprites/hud.png" id="1_mlouq"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(384, 384)
+texture = ExtResource("1_mlouq")
